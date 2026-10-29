@@ -30,7 +30,7 @@
 
   "customizations": {
     "codespaces": {
-      "openFiles": ["README.md", "src/main/java/examples/week01/Hello.java"]
+      "openFiles": ["README.md", "src/main/java/examples/week01/mon/Hello.java"]
     },
     "vscode": {
       "extensions": [
