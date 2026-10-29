@@ -1,0 +1,31 @@
+# Maven build output
+target/
+
+# Stray compiled classes (e.g. from running javac by hand)
+*.class
+
+# JVM crash logs
+hs_err_pid*.log
+
+# Eclipse / VS Code Java metadata
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+
+# VS Code: keep shared config (launch.json etc.), ignore everything else
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+.history/
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db

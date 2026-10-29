@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run tests for one HW",
+      "type": "shell",
+      "command": "mvn -B test -Dtest='${input:hw}.**' -Dsurefire.failIfNoSpecifiedTests=false",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run all tests",
+      "type": "shell",
+      "command": "mvn -B test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "hw",
+      "type": "pickString",
+      "description": "Which homework?",
+      "options": ["hw1", "hw2", "hw3", "hw4"]
+    }
+  ]
+}

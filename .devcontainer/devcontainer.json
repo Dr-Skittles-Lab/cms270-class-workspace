@@ -1,0 +1,54 @@
+{
+  "name": "CMS 270 (Java 25)",
+  "image": "mcr.microsoft.com/devcontainers/java:25-trixie",
+
+  "features": {
+    // Java comes from the image; this just adds Maven.
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "true"
+    },
+    // Virtual desktop for Swing programs, viewed in a browser tab on port 6080.
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "vscode",
+      "webPort": "6080"
+    }
+  },
+
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "GUI Desktop",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "containerEnv": {
+    "DISPLAY": ":1"
+  },
+
+  // Download dependencies up front so the first test run is fast.
+  "postCreateCommand": "mvn -B -q test-compile",
+
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md", "src/main/java/examples/week01/Hello.java"]
+    },
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.import.maven.enabled": true,
+        "java.server.launchMode": "Standard",
+        "java.compile.nullAnalysis.mode": "disabled",
+        "java.debug.settings.onBuildFailureProceed": false,
+        "files.exclude": {
+          "**/target": true
+        },
+        "git.autofetch": true
+      }
+    }
+  }
+}
