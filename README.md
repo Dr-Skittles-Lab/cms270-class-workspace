@@ -17,7 +17,7 @@ Do this once. Skip it if you've already made your copy.
 
 1. On **your copy's** GitHub page, click the green **Code** button.
 2. Choose the **Codespaces** tab, then **Create codespace on main**.
-3. Wait for setup to finish (the first time takes 2-4 minutes).
+3. Wait for setup to finish. The first time takes about 5 minutes; reopening the same codespace later takes under a minute. Java needs another minute or two after that to load (watch for "Java: Ready" in the bottom status bar).
 4. Open `src/main/java/examples/week01/Hello.java` and click **Run** above `main`. If you see `Hello, CMS 270!` in the terminal, you're all set.
 
 To come back later, go to [github.com/codespaces](https://github.com/codespaces) and open the **same** codespace. Don't create a new one each class.
@@ -108,5 +108,6 @@ Do this at the end of every class and every homework session.
 | Two files in different weeks both called `Dog.java` | That's fine, as long as each has its own week's `package` line. |
 | A broken file in one week stops another week from running | Every file in the workspace has to compile. Fix the error, or comment the broken code out with `/* ... */` for now. |
 | No **Run** link above `main` | Check the `package` line and that `main` is exactly `public static void main(String[] args)`. |
+| No **Run** link, or a popup says "You don't have an extension for debugging Java" (common on a brand-new codespace) | Click **Cancel** on the popup (don't install anything). Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Developer: Reload Window**. |
 | Tests don't show in the Testing sidebar | Test files must be in `src/test/java/...` with the right `package` line. Try Command Palette → **Java: Clean Java Language Server Workspace**. |
 | `HeadlessException` when running a GUI | Open a **new** terminal and run again. If it persists, Command Palette → **Codespaces: Rebuild Container**. |
